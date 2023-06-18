@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* Animated Carousel on CSS with Minimal JS */
+/* index_banner Styles */
+#index_banner {
+    height: 100vh;
+}
+#index_banner .content-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#index_banner .content-slider input {
+    display: none;
+}
+#index_banner .content-slider .slider {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+}
+#index_banner .content-slider .slider .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: all 0.5s ease;
+}
+
+/* banner上的文字 */
+#index_banner .content-slider .slider .banner .banner-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    /* 我看figma暫時抓這個距離～歡迎來改 */
+    position: absolute;
+    left: 8%;
+    top: 20%;
+    height: 100%;
+    padding-top: 6em;
+    box-sizing: border-box;
+}
+#index_banner .content-slider .slider .banner .banner-inner-wrapper h1 {
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 69px;
+    letter-spacing: 0.1em;
+    text-align:left;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#index_banner .content-slider .slider .banner .banner-inner-wrapper h4 {
+    margin: 10px 0;
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+    text-align:left;
+    color: #FFFFFF;
+}
+/* 這是原套件裡的裝飾線：暫時先不用 */
+/* #index_banner .content-slider .slider .banner .banner-inner-wrapper .line {
+    display: block;
+    width: 4em;
+    height: 0.1875em;
+    margin: 2.5em auto;
+    background: #fff;
+} */
+
+/* banner按鈕設定 */
+#index_banner .content-slider .slider .banner .banner-inner-wrapper .banner_white_outline_btn {
+    display: flex;
+    margin-top: 10px;
+    z-index: 15 ;
+}
+#index_banner .content-slider .slider .banner .banner-inner-wrapper .banner_white_outline_btn a{
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: white;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+}
+#index_banner .content-slider .slider .banner .banner-inner-wrapper .banner_white_outline_btn a:hover {
+    color: #D8A931 ;
+    border-color: #D8A931;
+    transition: 0.3s;
+}
+
+/* 各個banner換圖 */
+/* 第二張圖後都是我暫時找的～可換 */
+#index_banner .content-slider .slider #top-banner-1 {
+    background: url('../images/img_banner.jpg') no-repeat center center;
+    background-size: cover;
+}
+#index_banner .content-slider .slider #top-banner-2 {
+    background: url('../images/img_banner-2.png') no-repeat center center;
+    background-size: cover;
+}
+#index_banner .content-slider .slider #top-banner-3 {
+    background: url('../images/img_banner-3.png') no-repeat center center;
+    background-size: cover;
+}
+#index_banner .content-slider .slider #top-banner-4 {
+    background: url('../images/img_banner-4.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* 下方進度條設定 */
+#index_banner .content-slider nav {
+    position: absolute;
+    bottom: 0.5em;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+}
+#index_banner .content-slider nav .controls {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Noto Sans TC';
+    color: #fff;
+}
+#index_banner .content-slider nav .controls label {
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    height: 3.1em;
+    overflow: hidden;
+    margin: 0 1em;
+    padding-top: 1em;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'Noto Sans TC';
+    font-size: 1em;
+    color: #f6eac5;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#index_banner .content-slider nav .controls label .progressbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #f6eac5;
+    z-index: 100;
+}
+@media (max-width:1005px) {
+    #index_banner .content-slider nav .controls label {
+        width: 10%;
+    }
+
+}
+/* 進度條換色 */
+#index_banner .content-slider nav .controls label .progressbar .progressbar-fill {
+    position: inherit;
+    width: inherit;
+    height: inherit;
+    margin-left: -100%;
+    background: #D8A931;
+}
+#index_banner .content-slider nav .controls label span {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+#index_banner .content-slider nav .controls label:hover {
+    color: #e88382;
+}
+
+
+/* 動畫 */
+#index_banner .content-slider #banner1:checked ~ .slider #top-banner-1,
+#index_banner .content-slider #banner2:checked ~ .slider #top-banner-2,
+#index_banner .content-slider #banner3:checked ~ .slider #top-banner-3,
+#index_banner .content-slider #banner4:checked ~ .slider #top-banner-4 {
+    opacity: 1;
+    z-index: 1;
+}
+#index_banner .content-slider #banner1:checked ~ nav label:nth-of-type(1),
+#index_banner .content-slider #banner2:checked ~ nav label:nth-of-type(2),
+#index_banner .content-slider #banner3:checked ~ nav label:nth-of-type(3),
+#index_banner .content-slider #banner4:checked ~ nav label:nth-of-type(4) {
+    cursor: default;
+    color: #fff;
+    transition: all 0.5s;
+}
+#index_banner .content-slider #banner1:checked ~ nav label:nth-of-type(1) .progressbar,
+#index_banner .content-slider #banner2:checked ~ nav label:nth-of-type(2) .progressbar,
+#index_banner .content-slider #banner3:checked ~ nav label:nth-of-type(3) .progressbar,
+#index_banner .content-slider #banner4:checked ~ nav label:nth-of-type(4) .progressbar {
+    background: #fff;
+}
+#index_banner .content-slider #banner1:checked ~ nav label:nth-of-type(1) .progressbar-fill,
+#index_banner .content-slider #banner2:checked ~ nav label:nth-of-type(2) .progressbar-fill,
+#index_banner .content-slider #banner3:checked ~ nav label:nth-of-type(3) .progressbar-fill,
+#index_banner .content-slider #banner4:checked ~ nav label:nth-of-type(4) .progressbar-fill {
+    animation: progressBarFill 5s linear;
+}
+
+
+  /* Animations */
+@keyframes progressBarFill {
+    from {
+    margin-left: -100%;
+    }
+    to {
+    margin-left: 0;
+    }
+}
+
+/* Media Queries */
+/* RWD待補上 */
+
+

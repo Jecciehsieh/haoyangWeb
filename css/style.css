@@ -1,0 +1,1957 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&display=swap');
+
+/* eric/tools/css/reset/ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box; /* 不累加邊框與內距 */
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	font-family:
+		/*⻄⽂*/
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+		/*中⽂*/
+		"蘋⽅-繁", "PingFang TC", "⿊體-繁", "Heiti TC", "微軟正⿊體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+a {
+    text-decoration: none;
+}
+/* 字級基本樣式設定（字型、大小） */
+h1 {
+    font-family: Noto Serif TC;
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
+    line-height: 1.25;
+}
+
+h2 {
+    font-family: Noto Serif TC;
+    font-size: 2.25rem;
+    letter-spacing: 0.25rem;
+    color: #212936;
+    line-height: 1.25;
+}
+
+h3 {
+    font-family: Noto Serif TC;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    color: #212936;
+    line-height: 1.25;
+}
+
+h4 {
+    font-family: Noto Serif TC;
+    font-size: 1.25rem;
+    letter-spacing: 0.15rem;
+    line-height: 1.25;
+}
+
+p {
+    font-family: Noto Sans TC;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212936;
+    line-height: 1.5;
+}
+/* 區塊標題底下英文字的樣式設定 */
+section > p {
+    font-family: Noto Serif TC;
+}
+/* topbar樣式 */
+#nav_logo {
+    width: 140px;
+    margin-right: 32px;
+}
+#topbar {
+    position: fixed;
+    left:0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-image: linear-gradient(rgba(0,0,0,.15),transparent);
+    /* 新增：讓topbar浮在輪播上面 */
+    z-index: 50;
+}
+.nav_box{
+    display: flex;
+    padding:16px 32px;
+}
+.navigation{
+    position: absolute;
+    right: 32px;
+}
+.white_topbar {
+    background-color: white;
+    border-bottom: 1px solid #D2D5DA;
+    z-index: 50;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#topbar nav {
+    display: flex;
+    align-items: center;
+}
+.menu {
+    display: flex;
+}
+.menu>li {
+    margin-right:28px;
+}
+.nav_item {
+    color: white;
+}
+.nav_text_color {
+    color: #4D5562;
+}
+.nav_item:hover {
+    color:#9DA3AE;
+}
+/* 白色框按鈕樣式 */
+.white_outline_btn {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: white;
+    font-family: Noto Sans TC;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+    cursor: pointer;
+}
+
+.white_outline_btn:hover {
+    background-color: transparent;
+    border: 1px solid #C28E21;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: #C28E21;
+    font-family: Noto Sans TC;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+}
+
+.nav_btn {
+    background-color: transparent;
+    border: 1px solid #C28E21;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: #C28E21;
+    font-family: Noto Sans TC;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+    cursor: pointer;
+}
+
+.nav_btn:hover {
+    background-color: transparent;
+    border: 1px solid #996F15;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: #996F15;
+    font-family: Noto Sans TC;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+}
+/*topbar RWD*/
+@media (min-width:835px) {
+	.hamburger {
+		display: none;
+	}
+}
+@media (max-width:834px) {
+	.hamburger {
+		display: inline-block;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+        padding:6px 0px;
+        position: absolute;
+        right: 24px;
+	}
+
+	.bar {
+		display: block;
+		width: 25px;
+		height: 3px;
+		margin: 5px auto;
+		background-color: #fff;
+		transition: all 0.3s ease-in-out;
+	}
+
+    .bar_darkblue {
+		background-color: #0D1F35;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.hamburger.is-active .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.is-active .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.hamburger.is-active .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+	.nav_box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+        width: 100%;
+    }
+    .nav_logo{
+        position: absolute;
+        left:0;
+    }
+    .menu{
+        flex-direction: column;
+        margin: 20px;
+    }
+    .menu>li {
+        margin:12px;
+    }
+
+    .navigation{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+		position: absolute;
+		top: 76px;
+        left: 0;
+		right: 0;
+        background-color: #F3F4F6;
+        padding: 24px;
+        animation: navigation 0.35s both;
+    }
+    .navigation > a > .white_outline_btn {
+        border: 1px solid #C28E21;
+        color: #C28E21;
+    }
+    .navigation > a > .white_outline_btn:hover {
+        border: 1px solid #996F15;
+        color: #996F15;
+    }
+
+    @keyframes navigation {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+	.navigation.show {
+		display: none;
+		animation: show 0.35s both;
+	}
+
+	@keyframes show {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+    
+}
+/*作品案例*/
+#works {
+    margin: 96px 64px;
+    display: flex;
+    column-gap: 32px;
+    height: auto;
+}
+
+/*左邊標題區*/
+.section_title {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.section_title > div {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+.section_title > div > p {
+    font-family: Noto Serif TC;
+    letter-spacing: 0.15rem;
+    margin-left: 4px;
+}
+.deco_line {
+    width: 100%;
+    height: 1px;
+    background-color: #C28E21;
+}
+/*金色框按鈕*/
+.gold_outline_btn a{
+    background: transparent;
+    border-radius: 4px;
+    border: 1px solid #C28E21;
+    padding: 8px 16px;
+    color: #C28E21 ;
+    font-family: 'Noto Sans TC';
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+}
+.gold_outline_btn a:hover {
+    background: transparent;
+    border-radius: 4px;
+    border: 1px solid #996F15;
+    padding: 8px 16px;
+    color: #996F15 ;
+    font-family: 'Noto Sans TC';
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+/* 作品案例_圖示 */
+
+.works_item {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+.works_item img{
+    width: 100%;
+    height: 224px;
+    object-fit: cover;
+}
+.works_item > div >a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: in;
+    padding: 16px 24px;
+    color: white;
+    background-image: linear-gradient(to top, rgba(0,0,0,.5),transparent);
+}
+.works_item>div>a:hover{
+    color: #F1CA67;
+}
+@media (max-width:768px) {
+    #works {
+        margin: 64px 32px;
+        display: flex;
+        flex-direction: column;
+        column-gap: 32px;
+        height: auto;
+    }
+}
+
+/* 作品案例圖示_Customize slick slider */
+*:focus, *:active, *:visited {
+    outline: none;
+}
+
+.works_box {
+    background-color: #964848;
+    position: relative;
+    width: 1300px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width:1535px){
+    .works_box{
+        width: 900px;
+        height: 220px;
+    }
+}
+@media (max-width:992px){
+    .works_box{
+        width: 500px;
+        height: 220px;
+    }
+}
+@media (max-width:768px) {
+    .works_box {
+        width: 500px;
+        height: 220px;
+    }
+}
+@media (max-width:576px) {
+    .works_box {
+        width: 400px;
+        height: 220px;
+    }
+}
+
+
+
+/* 套件生成button */
+.slick-dots {
+    position: absolute;
+    bottom: -45px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+}
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; /* 轉變滑鼠圖標可互動 */
+
+}
+.slick-dots li button {
+    display: none;
+}
+.slick-dots li:before {
+    top: 1px;
+    transition: all 0.5s;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #0D1F35;
+    position: absolute;
+    border-radius: 50px;
+}
+.slick-dots li.slick-active:before {
+    top: 0;
+    width: 8px;
+    height: 8px;
+    margin-left: -2px;
+    background-color: #C28E21;
+}
+.slick-prev {
+    left: 0;
+    transform: rotate(180deg);
+    z-index: 10;
+}
+.slick-next {
+    right: 0;
+}
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    height: 26px;
+    width: 14px;
+    margin-top: -13px;
+
+    font-size: 0;
+    cursor: pointer; 
+    background-color: transparent;
+    border: none;
+    background-image: url(https://tarkikromanski.github.io/files/arrow-slider.png);
+    background-repeat: no-repeat;
+}
+/* slick slider＿物件 */
+.comandSlider__item {
+    margin: auto 0;
+    transition: box-shadow 2s;
+    cursor: pointer; 
+    position: relative;
+    box-shadow: inset -141px -129px 200px rgba(0, 0, 0, 0.25);
+}
+.comandSlider__item:hover {
+    box-shadow: inset 141px 129px 200px rgba(0, 0, 0, 0.25);
+}
+
+.comandSlider__item_photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin: auto;
+    overflow: hidden;
+    transition: transform .2s;
+}
+.comandSlider__item:hover .comandSlider__item_photo {
+    transform: scale(1.1);
+}
+.comandSlider__item > div{
+    position: absolute;
+    top: 180px;
+    left: 30px;
+}
+.comandSlider__item > div>a{
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+.comandSlider__item:hover div > a {
+    color: #f5cb72;
+}
+
+
+/* 服務流程 */
+#service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0D1F35;
+    height: auto;
+    padding:96px 64px;
+}
+
+.service_title {
+    text-align: center;
+}
+#service h2{
+    color: #D8A931;
+}
+.service_title p{
+    font-family: Noto Serif TC;
+    letter-spacing: 0.15rem;
+    margin: 1rem 0;
+    color: #D8A931;
+    /* 新增 */
+    padding-left: 10px;
+}
+
+.service_process_box p{
+    letter-spacing: 0.15rem;
+    margin: 1rem 0;
+    color: #ffffff;
+    /* 新增 */
+    padding-left: 10px;
+}
+
+
+/* 服務流程_按鈕 */
+.gold_btn {
+    display: flex;
+    margin-top: 10px;
+}
+.gold_btn a{
+    background: linear-gradient(90deg, #C28E21 0%, #F1CA67 100%);
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: #0D1F35 ;
+    font-family: 'Noto Sans TC';
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+}
+.gold_btn a:hover {
+    color:white ;
+    transition: 0.3s;
+}
+/* 首頁_服務流程RWD */
+
+@media (max-width:992px){
+    .service_process_all{
+        transform: scale(0.7,0.7);
+    }
+}
+
+
+@media (max-width:768px) {
+    .service_flowchart img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        max-width: 1024px;
+        margin:64px 0px;
+    }
+}
+@media (max-width:576px) {
+    .service_flowchart img {
+        display: block;
+        height: 100%;
+        width:100%;
+        margin:48px 0px;
+    }
+}
+
+
+
+/* 服務流程_展示動畫 */
+/* 版面定位 */
+.service_process_all{
+    position: relative;
+}
+.service_process_1,.service_process_2{
+    display: flex;
+    flex-direction: row;
+}
+.service_process_1 .service_process_box{
+    position: relative;
+    z-index: 10;
+    background-color: #0D1F35;
+    margin: 0 70px;
+}
+.service_process_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 80px 60px 80px;
+}
+.service_process_2 .service_process_box{
+    position: relative;
+    z-index: 10;
+    background-color: #0D1F35;
+    margin: 0 70px;
+}
+.service_process_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 給圖文定位 */
+    position: relative;
+    /* 圈+文＿版面大小 */
+    height: 100%;
+    width: 200px;
+}
+.service_process_box span{
+    width: 30px;    
+    height: 34px;
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    /* Gold/70 */
+    color: #C28E21;
+    transform: matrix(1, 0, -0.18, 0.98, 0, 0);
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+.service_process_img{
+    width: 82px;
+    height: 82px;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+.service_process_box h3{
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    z-index: 2;
+}
+.service_process_box p{
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    z-index: 2;
+}
+.svg_circle{
+    position: absolute;
+    z-index: 1;
+	display: block;
+    width: 200px;
+	height: 200px;
+}
+
+
+/* 轉動動畫細節 */
+/* 初始狀態為完全透明 */
+.service_process_box,.svg-arrow_box-1,.svg-arrow_box-2,.svg-arrow-3 {
+    opacity: 0;  /* 初始狀態為完全透明 */
+}
+.svg_circle .small {
+	stroke: transparent;
+	fill: transparent;
+	stroke-width: 1px;
+    /*圓周長 502.4*/
+    animation-fill-mode: forwards;
+	animation-name: none ;
+    animation-duration:12s ;
+	stroke-dasharray:422.4 80; 
+    /* stroke-dasharray要符合圓周長才能只顯示一組線段+空白 */
+	stroke-dashoffset: 0; 
+}
+@keyframes circle_small {
+    from {
+        stroke-dasharray:80 422.4 ; 
+        stroke-dashoffset: 240;
+        /* stroke-dashoffset屬性能把stroke-dasharray往前推出去 */
+    }
+    to {
+        stroke: white;
+        /* fill: rgba(0,0,0,0.25); */
+        stroke-dashoffset: 0; 
+    }
+}
+/* 線段動畫 */
+/* 上半部 */
+.svg-arrow_box-1{
+    position: absolute;
+    top: 90px;
+    left: 130px;
+    overflow: hidden;
+    width: 1000px;
+    z-index: 3;
+}
+.svg-arrow-1 {
+    width: 900px;
+    animation: moveRight-1_no 7s forwards linear;
+}
+@keyframes moveRight-1 {
+    0% { transform: translateX(-900px); }
+    100% { transform: translateX(150px); }
+}
+/* 中間 */
+.svg-arrow-3{
+    position: absolute;
+    top: 340px;
+    left: 170px;
+    width: 1000px;
+    z-index: 3;
+}
+/* 下半部 */
+.svg-arrow_box-2{
+    position: absolute;
+    top: 590px;
+    left: 400px;
+    overflow: hidden;
+    width: 500px;
+    z-index: 3;
+}
+.svg-arrow-2 {
+    width: 900px;
+    animation: moveRight-2_no 13s forwards linear;
+}
+@keyframes moveRight-2 {
+    0% { transform: translateX(-1900px); }
+    100% { transform: translateX(0px); }
+}
+
+
+
+
+
+
+
+
+/* 首頁-關於我們 */
+#about{
+    padding: 96px 32px;
+    /* width: 90%; */
+    height: auto;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.about_subtitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about_subtitle_line{
+    display: block;
+    width: 100px;
+    height: 1px;
+    margin: 20px;
+    background: #C28E21;
+}
+.about_subtitle > p {
+    font-family: Noto Serif TC;
+    letter-spacing: 0.15rem;
+    color: #212936;
+}
+
+/* 關於我們_圖＆文 */
+.about_card{
+    display: flex;
+    margin-top: 64px;
+    position: relative;
+}
+
+.about_card_text{
+    padding: 48px;
+    width: 50%;
+    height: auto;
+    position: relative;
+    bottom:0;
+    right: -64px;
+    background: #162F4D;
+    z-index: 11;
+}
+.about_card_text h3{
+    margin-bottom: 16px;
+    color: #D2D5DA;
+}
+.about_card_text p{
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #D2D5DA;
+    margin-bottom: 32px;
+}
+
+
+.about_card_picture{
+    width: 50%;
+    position: relative;
+    top: -48px;
+    right: 48px;
+}
+.about_card_picture >img{
+    height: 384px;
+    object-fit: cover;
+}
+@media (max-width:576px) {
+    #about{
+        padding: 64px 32px 0px 32px;
+        height: auto;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    .about_card{
+        display: flex;
+        flex-direction: column;
+        margin-top: 64px;
+        position: relative;
+    }
+    .about_card_text{
+    padding: 24px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom:-128px;
+    left:-16px;
+}
+	.about_card_picture{
+		width: 100%;
+        position: relative;
+        top: -424px;
+        right:-16px;
+}
+    .about_card_picture >img{
+    height: 224px;
+    object-fit: cover;
+    }
+}
+
+
+/* 最新消息 */
+#news {
+    background-color: #F3F4F6;
+    padding: 96px 64px;
+    display: flex;
+    column-gap: 32px;
+    height: auto;
+}
+
+/*文章區*/
+.news_card {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    row-gap: 24px;
+}
+/*文章區 第一篇文章*/
+.article_first {
+    position: relative;
+}
+.article_first > img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    position: relative;
+}
+.article_first > div {
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    padding: 32px 64px 32px 64px;
+    background-image: linear-gradient(to top, rgba(0,0,0,.5),transparent);
+}
+.article_first > div > p {
+    margin-bottom: 8px;
+    color: white;
+}
+.article_first > div > a > h3 {
+    color: white;
+    line-height: 1.25rem;
+}
+.article_first > div > a > h3:hover {
+    color: #F1CA67;
+    line-height: 1.25rem;
+}
+/*文章區 第二三篇文章*/
+.article_list {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+}
+.article_list > img {
+    width: 240px;
+    height: 135px;
+    object-fit: cover;
+}
+.article_list > div > p {
+    margin-bottom: 8px;
+    color: #6C727F;
+}
+.article_list > div > a {
+    color: #212936;
+}
+.article_list > div > a:hover {
+    color: #6C727F;
+}
+
+.divide {
+    width: 100%;
+    height: 1px;
+    background-color: #D2D5DA;
+}
+@media (max-width:768px) {
+    #news {
+        padding: 64px 24px;
+        display: flex;
+        flex-direction: column;
+        column-gap: 32px;
+        height: auto;
+    }
+    .section_title {
+        display: flex;
+        /* flex-direction: column; */
+        width: 100%;
+    }
+    .section_title .gold_outline_btn {
+        display: none;
+    }
+    .article_first > img {
+        width: 100%;
+        height: 288px;
+        object-fit: cover;
+        position: relative;
+    }
+    .article_first > div {
+        position: absolute;
+        bottom: 0px;
+        left:0px;
+        padding: 32px;
+        background-image: linear-gradient(to top, rgba(0,0,0,.5),transparent);
+    }
+    .news_card {
+        display: flex;
+        /* flex-direction: column; */
+        width: 100%;
+        row-gap: 24px;
+    }
+    .news_card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 24px;
+    }
+
+}
+
+/* Footer */
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 32px;
+    background-color: #162F4D;
+    padding: 64px 64px;
+    color: white;
+}
+.footer_address > img {
+    width: 200px;
+    margin-bottom: 24px;
+}
+address > div > p {
+    color: white;
+    font-size: 14px;
+}
+address > div > img {
+    width: 16px;
+    margin-right: 10px;
+}
+.haoyang_phone,.haoyang_location {
+display: flex;
+margin-bottom: 16px;
+}
+.footer_list {
+    width: 37.5%;
+    display: flex;
+    column-gap: 64px;
+}
+.footer_list > div > p{
+    font-weight: 500;
+    color: #D8A931;
+    margin-bottom: 12px;
+}
+.footer_list > div > ul > li {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.footer_list > div > ul > li:hover {
+    text-decoration: underline;
+}
+footer > p {
+    background-color: #0D1F35;
+    color: #9DA3AE;
+    font-size: 14px;
+    padding: 16px;
+    text-align: center;
+}
+@media (max-width:900px) {
+    footer > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 32px;
+    }
+    .footer_address{
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    .footer_list::before{
+        content: '';
+        position: absolute;
+        top: -16px;
+        background-color:#203D60;
+        width: 100%;
+        height: 1px;
+
+    }
+    .footer_list {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+
+/*作品案例頁*/
+/*案例頁_banner*/
+.product_banner{
+    background-image: url(../images/img_product_banner.png);
+    height: 448px;
+    width: 100%;
+    background-size: cover;
+}
+.product_banner .title{
+    padding: 0px 32px;
+    float: right;
+}
+.product_title_line {
+    width: 230px;
+    height: 1px;
+    background-color: #C28E21;
+    flex-shrink: 0; /*解除被display:flex;限制長度*/
+}
+
+/*案例頁_導覽列*/
+#product_navbar{
+    position: relative;
+    /* display: flex;
+    align-items: center; */
+    height: 587px;
+    background-color: #162F4D;
+}
+
+/* 案例頁_導覽列_跑馬燈 */
+#product_navbar{
+    overflow:hidden;
+}
+.marquee-inner span{
+    float:left;
+    /* width:50%; */
+}
+#product_navbar .marquee-block{
+    /* 定位 */
+    position: absolute;    
+    top: 100px;
+    left: 450px;
+    /* 設定 */
+    --total-marquee-items:5;
+    height: 350px;
+    width: calc(536px * (var(--total-marquee-items)));
+    /* 536px=506px+10px*2 */
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (max-width:768px){
+    .marquee-block{
+        display: none;
+    }
+}
+
+.marquee-inner{
+    display: block;
+    width: 200%;
+    position: absolute;
+}
+.marquee-inner.to-left{
+    animation: marqueeLeft 30s linear infinite;
+}
+.marquee-item{
+    width: 506px;
+    height: auto;
+    display: inline-block;
+    margin: 0 10px;
+    float: left;
+    transition: all .2s ease-out;
+}
+@keyframes marqueeLeft{
+    0% {
+    left: 0;
+    }
+    100% {
+    left: -98%;
+    }
+}
+
+
+/* #product_navbar .img_box{
+    position: relative;
+    height: 300px;
+    width: 1520px;
+    background-image: url(../images/img_product_navbar-2_large.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#product_navbar .img_box div{
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    text-align: center;
+    background: rgba(13, 31, 53, 0.6);
+    width: 1520px;
+    height: 76px;
+}
+#product_navbar .img_box a{
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 60px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+} */
+
+
+/*案例頁_導覽列_menu*/
+.project_all{
+    position: relative;
+}
+.project_menu{
+    position: absolute;
+    top:-490px;
+    left:80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+@media (max-width:768px){
+    .project_menu{
+        position: absolute;
+        top:-150px;
+        left:5%;  
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.project_menu li a{
+    margin-left: 20px;
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+.project_menu li:hover a{
+    background: linear-gradient(90deg, #C28E21 0%, #F1CA67 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.project_menu li{
+    margin-bottom: 40px;
+}
+.title_all,.title_text{
+    display: flex;
+    align-items: center;
+}
+.project_menu .tabs_bar{
+    width: 35px;
+    height: 1px;
+    display: block;
+    background: #fff;
+    transform: rotate(-45deg);
+}
+.tabs_bar.bar-active {
+    background: linear-gradient(90deg, #C28E21 0%, #F1CA67 100%);
+    transform: rotate(90deg);
+    transition: all .2s ease-out;
+}
+
+/* .project_menu .title_text::before{
+    content: '';
+    width: 2px;
+    height: 24px;
+    padding-left: 70px;
+    display: inline-block;
+    background-image: url(../images/img-icon_white_slash.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+} */
+
+
+
+
+/*案例頁_導覽列_tabs相關*/
+/* 這裡要控制只出現第一個tabs(全部這一項目) */
+#tab_all .tab-content {
+    display: none;
+}
+#tab_all #tabs-1 {
+    display: block;
+}
+/*案例頁_各作品分類*/
+
+#tabs-1{
+    display: flex;
+    flex-direction: column;
+}
+
+.project_all{
+    background-color: #162F4D;
+    position: relative;
+}
+/*案例頁_bg設定*/
+.project_all::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -500px;
+    right: 0;
+    bottom: 0;
+    left: -900px;
+    background: url(../images/img-product_bg.svg);
+    opacity: 0.15;
+    background-repeat: no-repeat;
+    mix-blend-mode: soft-light;
+    pointer-events: none; /* 讓偽元素不會阻礙元素本身的鼠標事件 */
+    z-index: 0;
+}
+.project_all>*{
+    z-index: 1;
+}
+/*案例頁_案例頁內縮*/
+.box1,.box2,.box3,.box4{ 
+    margin: 0 10%;
+    /* 這裡待修改 */
+}
+/* 上標題 */
+.box_title{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 35px 20px;
+}
+.box_title div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box_title div h2{
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 52px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+.box_title div .title_line{
+    margin-right: 30px;
+    width: 30px;
+    height: 1px;
+    background-color:  rgba(255, 255, 255, 1);
+}
+/* more */
+.box_title div a{
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+.box_title div img{
+    height: 15px;
+    object-fit: cover;
+    margin: 4px 0 0 5px;
+}
+
+/* 下圖 */
+.box_all{
+    display: flex;
+    padding: 20px 0 80px 0;
+}
+@media (max-width:768px){
+    .box_all{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #product_navbar{
+        height: 200px;
+    }
+    .box_all div{
+        margin-top: 50px;
+    }
+}
+
+
+
+
+
+
+
+.box_all .card{
+    margin: 0 20px;
+}
+/* 全圖片設定 */
+.box_all .card img {
+    object-fit: contain;
+    height: 100%;
+    /* width: 365px;
+    height: 255px; */
+}
+
+
+
+
+.box_all .card p{
+    margin: 10px 0px;
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+/* 作品案例頁_建築幕牆nav點擊彈出 */
+/* 彈跳視窗 */
+#product_navbar .side-menu-wrap.active {
+    right: 0;
+}
+#product_navbar .side-menu-wrap{
+    /* 定位bar */
+    position: absolute;
+    top: 480px;
+    right: -650px;
+    transition: 1s;
+}
+.side-menu{
+    width: 650px;
+    height: 60px;
+    background: rgba(255, 255, 255, 1);
+    /* 定位文字 */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    /* 陰影與圓角 */
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px 0 0 30px;
+}
+.side-menu li{
+    margin: 0 60px;
+}
+.side-menu li a{
+    font-family: 'Noto Serif TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+.side-menu li a:hover {
+    background: linear-gradient(90deg, #C28E21 0%, #F1CA67 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/*服務項目頁*/
+/*banner*/
+.service_banner{
+    background-image: url(../images/img_service_banner.png);
+    height: 448px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*設定banner滑入動畫*/
+.title {
+    position: relative;
+    animation-name: animate;
+    animation-duration:1s;
+}
+@keyframes animate {
+    0% {
+        left:-50px;
+        opacity: 0%;
+    }
+    100%{
+        left:0px;
+        opacity: 100%;
+    }
+}
+/*設定title顏色樣式*/
+.title > h1 {
+    background-image: -webkit-linear-gradient(90deg,#C28E21 0%, #F1CA67 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 144px;
+    padding-left: 32px;
+
+}
+
+.title > div{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+    margin-left: 36px;
+    width: 30%;
+}
+
+.title> div > h4{
+    background-image: -webkit-linear-gradient(90deg,#C28E21 0%, #F1CA67 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media (max-width:768px) {
+    .service_banner{
+        background-position-x: right;
+    }
+    .title > div{
+        width: 50%;
+    }
+
+}
+
+/*服務介紹*/
+#service_intro {
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+    margin:128px auto;
+    position: relative;
+    width: 90%;
+}
+.service_bg {
+    z-index: -5;
+    width: 100%;
+    height: 576px;
+    position: absolute;
+    right: -64px;
+    top: -128px;
+}
+.service_bg_2 {
+    z-index: -5;
+    width: 100%;
+    height: 576px;
+    position: absolute;
+    left: -320px;
+    bottom:0px;
+}
+#service_intro > div {
+    display: flex;
+}
+#service_intro > div > img {
+    width: 60%;
+    height: 384px;
+    object-fit: cover;
+}
+#service_intro > div > div > p {
+    margin: 16px 0px;
+    color: #4D5562;
+}
+.intro_box_odd > div{
+    padding: 48px;
+    background-color: white;
+    width: 60%;
+    height:100%;
+    margin: auto 0px 0px -96px;
+}
+
+.intro_box_even > div{
+    padding: 48px;
+    background-color: white;
+    width: 60%;
+    height:100%;
+    margin: auto -96px 0px 0px;
+    z-index: 5;
+}
+/*查看更多＿按鈕*/
+.works_btn > a{
+    display: flex;
+    gap:8px;
+    align-items: center;
+    color: #C28E21;
+    font-family: Noto Serif TC;
+    font-size: 1.15rem;
+    letter-spacing: 0.08rem;
+}
+.works_btn > a > img{
+    width: 24px;
+}
+.works_btn > a > img:hover{
+    width: 28px;
+    transition: width .3s;
+}
+@media (max-width:768px) {
+    .service_description > h2{
+        font-size: 1.75rem;
+    }
+    #service_intro > div {
+        display: flex;
+        flex-direction: column;
+    }
+    #service_intro > div > img {
+        width: 100%;
+        height: 288px;
+    }
+    .intro_box_odd > div{
+        padding: 24px;
+        background-color: white;
+        width: 90%;
+        height:100%;
+        margin: -112px 0px 96px 0px;
+    }
+    .intro_box_even > div{
+        padding: 24px;
+        width: 90%;
+        height:100%;
+        margin: 0px 0px -288px 0px;
+    }
+    .intro_box_even > img{
+        margin: -128px 0px 96px 0px;
+    }
+}
+/*聯絡方式區*/
+#contact {
+    background-image:url(../images/img_contact_bg.jpg);
+    width: 100%;
+    height: 448px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0px 32px 64px 32px;
+}
+#contact >div {
+    margin: 0px auto;
+    display: flex;
+    gap: 64px;
+    max-width:1024px;
+}
+/*左邊標題區*/
+.contact_box1{
+    width: 50%;
+}
+.contact_box1 >p{
+    padding-left: 4px;
+    font-family: Noto Serif TC;
+    letter-spacing: 0.15rem;
+    margin-top: 8px;
+}
+.vertical_line {
+    margin-left: 12px;
+    width: 1px;
+    height: 120px;
+    background-color: #C28E21;
+    background-repeat: no-repeat;
+    margin-bottom: 12px;
+}
+/*右邊聯絡資訊＋按鈕*/
+.contact_box2 {
+    width: 50%;
+    margin: 96px 0px;
+}
+.contact_info {
+    background-color:rgba(255, 255, 255, 80%);
+    padding: 48px;
+}
+.contact_info > div>img{
+    width: 18px;
+    margin-right: 16px;
+}
+/* 聯絡按鈕 */
+.contact_btn{
+    margin-top: 24px;
+    background-color:rgba(255, 255, 255, 80%);
+    padding: 16px;
+    text-align: center;
+}
+.contact_btn > a {
+    color: #162F4D;
+    font-family: Noto Serif TC;
+    font-size: 18px;
+    letter-spacing: .15rem;
+}
+@media (max-width:768px) {
+    #contact {
+        height: 100%;
+    }
+    #contact >div {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+    .contact_box2 {
+        width: 100%;
+        margin:0px;
+    }
+}
+
+/* 按鈕插件 */
+.contact_box2 >a {
+    font-family: Noto serif TC;
+    font-size: 18px;
+    letter-spacing: .15rem;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1.2px;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 24px;
+    background-color: rgba(255, 255, 255, 80%);
+}
+.btn:focus {
+    outline: none;
+}
+
+.btn--primary {
+    color: #162F4D;
+}
+
+.btn--animated {
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+.btn--animated.btn--border.btn--primary {
+    border: 1px solid white;
+}
+.btn--animated:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #162F4D;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+}
+.btn--animated:hover {
+    color: white;
+}
+.btn--animated:hover:before {
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+}
+
+/*關於我們頁*/
+/*banner*/
+.about_banner{
+    background-image: url(../images/img_about_banner.jpg);
+    height: 448px;
+    width: 100%;
+    background-size: cover;
+}
+
+#company_profile {
+    display: flex;
+    margin:128px auto;
+    width: 100%;
+    /* height: 80vh; */
+}
+.company_profile_1{
+    width: 50%;
+    padding: 0px 48px;
+}
+.company_profile_2{
+    width: 50%;
+    height: 100%;
+}
+.company_profile_2 img{
+    height: 448px;
+    object-fit: cover;
+}
+.box1_title {
+    display: flex;
+    align-items: center;
+}
+.box1_title h2{
+    white-space: nowrap;
+    color: #C28E21;
+    margin-right: 24px;
+}
+.company_profile_1 > div {
+    margin: 32px 0px;
+}
+
+.company_profile_content > h3,p {
+    color:#162F4D;
+}
+.company_profile_content > h3 {
+    margin-bottom: 12px;
+}
+.company_spirit {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+.spirit_words {
+    margin-top: 24px;
+    white-space: nowrap;
+    text-align: center;
+}
+.spirit_words p {
+    font-family: Noto serif TC;
+    letter-spacing :0.05rem;
+    color:#162F4D;
+}
+#video > p {
+    background-color: #0D1F35;
+    text-align: center;
+    color: white;
+    padding: 32px 0px;
+    font-family: Noto serif TC;
+    margin: 0px;
+    letter-spacing: .1rem;
+}
+#company_mission {
+    text-align: center;
+}
+#company_mission >div {
+    margin: 48px 0px;
+}
+#company_mission >div>h2{
+    margin-bottom: 16px;
+}
+
+#company_picture {
+    padding: 0px 64px;
+    margin-bottom: 128px;
+}
+#company_picture > div {
+    display: flex;
+    flex: 1;
+}
+#company_picture > div >p {
+    margin: 12px auto;
+    color: white;
+}
+#company_picture > div:last-child {
+    flex-direction: column;
+    padding: 64px 0px 128px 0px;
+    background-image: url(../images/img_about_6.jpg);
+    background-size: cover;
+}
+
+#company_description {
+    background-image: url(../images/img_about_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 128px 64px;
+}
+#company_description p{
+    width: 50%;
+    color: white;
+    line-height: 2;
+
+}
